@@ -53,7 +53,7 @@ const Cart = ({ history }) => {
                                 <div className="card-body cart">
                                     <div className="col-sm-12 empty-cart-cls text-center"> <img src="https://cdn-icons-png.flaticon.com/512/2037/2037457.png" width={130} height={130} className="img-fluid mb-4 mr-3" alt='' />
                                         <h3><strong>Giỏ hàng của bạn trống</strong></h3>
-                                        <h4>Hãy thêm một cái gì đó để giỏ hàng đầy ắp tình yêu thương!</h4> <Link to="/" className="btn btn-primary cart-btn-transform m-3" data-abc="true">Tiếp tục mua sắm</Link>
+                                        <h4>Hãy thêm một cái gì đó để giỏ hàng ngay bây giờ!</h4> <Link to="/" className="btn btn-primary cart-btn-transform m-3" data-abc="true">Tiếp tục mua sắm</Link>
                                     </div>
                                 </div>
                             </div>

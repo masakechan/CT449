@@ -158,7 +158,7 @@ const Dashboard = () => {
 
                             {loading ? <Loader /> : (
                                 <Fragment>
-                                    <MetaData title={'Admin Dashboard'} />
+                                    <MetaData title={'Admin B2000146'} />
 
                                     <div className="row pr-4">
                                         <div className="col-xl-3 col-sm-6 mb-3">

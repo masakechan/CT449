@@ -1,24 +1,25 @@
 {
-  "name": "60CNTT1",
+  "name": "ct449",
   "version": "1.0.0",
-  "description": "Shop ban hang online",
+  "description": "Shop ban thực phẩm",
   "main": "server.js",
   "scripts": {
     "start": "SET node backend/server.js",
     "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/server",
     "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/server",
     "seeder": "node backend/utils/seeder.js",
-    "heroku-postbuild" : "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
   },
-  "author": "Nhom3_TTCN",
+  "author": "B2000146",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cloudinary": "^1.23.0",
     "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-fileupload": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.16",
@@ -28,5 +29,16 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masakechan/CT449.git"
+  },
+  "keywords": [
+    "ct449"
+  ],
+  "bugs": {
+    "url": "https://github.com/masakechan/CT449/issues"
+  },
+  "homepage": "https://github.com/masakechan/CT449#readme"
 }

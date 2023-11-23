@@ -23,7 +23,6 @@ const UpdateProduct = ({ match, history }) => {
 
     const categories = [
         'Rau-Củ-Trái cây',
-        'Rau-Củ-Trái cây',
         'Thịt-Trứng-Hải sản',
         'Thực phẩm chế biến',
         'Thực phẩm đông lạnh',
@@ -33,8 +32,7 @@ const UpdateProduct = ({ match, history }) => {
         'Đồ uống - Giải khát',
         'Hóa Mỹ phẩm',
         'Chăm sóc cá nhân',
-        'Chăm sóc mẹ và bé',
-        'Thể thao'
+      
     ]
 
     const alert = useAlert();

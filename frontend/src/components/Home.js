@@ -38,8 +38,6 @@ const Home = ({ match }) => {
         'Đồ uống - Giải khát',
         'Hóa Mỹ phẩm',
         'Chăm sóc cá nhân',
-        // 'Chăm sóc mẹ và bé',
-        // 'Thể thao'
     ]
 
     const alert = useAlert();
