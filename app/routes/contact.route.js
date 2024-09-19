@@ -3,6 +3,12 @@ const contacts = require("../controllers/contact.controller");
 
 const router = express.Router();
 
+// Route tĩnh trả về trang contact
+router.get('/contact', (req, res) => {
+  res.send('This is the contact page');
+});
+
+// Route CRUD cho contacts
 router.route("/")
     .get(contacts.findAll)
     .post(contacts.create)
