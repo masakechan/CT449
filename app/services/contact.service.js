@@ -28,7 +28,7 @@ class ContactService {
         return contact;
     }
 
-    // Method to create or update a contact
+    // Phương pháp tạo hoặc cập nhật một liên hệ
     async create(payload) {
         const contact = this.extractContactData(payload);
         const result = await this.Contact.findOneAndUpdate(
@@ -39,13 +39,13 @@ class ContactService {
         return result;
     }
 
-    // Method to find contacts based on a filter
+    // Phương pháp tìm liên hệ dựa trên bộ lọc
     async find(filter) {
         const cursor = await this.Contact.find(filter);
         return await cursor.toArray();
     }
 
-    // Method to find a contact by name
+    // Phương pháp tìm liên hệ theo tên
     async findByName(name) {
         return await this.find({
             name: { $regex: new RegExp(name), $options: "i" },
