@@ -7,7 +7,7 @@ class ContactService {
 
     // Method to find a contact by ID
     async findById(id) {
-        return await this.Contact.findOne({
+        return await this.Contact.findOne({  
             _id: ObjectId.isValid(id) ? new ObjectId(id) : null,
         });
     }
@@ -28,7 +28,7 @@ class ContactService {
         return contact;
     }
 
-    // Phương pháp tạo hoặc cập nhật một liên hệ
+    // Method to create or update a contact
     async create(payload) {
         const contact = this.extractContactData(payload);
         const result = await this.Contact.findOneAndUpdate(
@@ -39,13 +39,13 @@ class ContactService {
         return result;
     }
 
-    // Phương pháp tìm liên hệ dựa trên bộ lọc
+    // Method to find contacts based on a filter
     async find(filter) {
         const cursor = await this.Contact.find(filter);
         return await cursor.toArray();
     }
 
-    // Phương pháp tìm liên hệ theo tên
+    // Method to find contacts by name (using regex for case-insensitive matching)
     async findByName(name) {
         return await this.find({
             name: { $regex: new RegExp(name), $options: "i" },
@@ -66,7 +66,7 @@ class ContactService {
         return result.value; // return the updated contact
     }
 
-    //Delete
+    // Method to delete a contact by ID
     async delete(id) {
         const result = await this.Contact.findOneAndDelete({
             _id: ObjectId.isValid(id) ? new ObjectId(id) : null,
@@ -74,14 +74,15 @@ class ContactService {
         return result;
     }
 
-    //findFavorite
+    // Method to find favorite contacts
     async findFavorite() {
-        return await this.find({ favorite: true});
+        return await this.find({ favorite: true });
     }
 
-    //DeleteAll
+    // Method to delete all contacts
     async deleteAll() {
         const result = await this.Contact.deleteMany({});
+        return result;
     }
 }
 

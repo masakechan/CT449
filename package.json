@@ -1,7 +1,7 @@
 {
   "name": "ct449",
   "version": "1.0.0",
-  "description": "",
+  "description": "*************************\r Nguyen Phuc Khoi \r mssv: B2000146\r CT-44903\r BACKEND 1 + 2\r *************************",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/masakechan/CT449#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "mongodb": "^6.9.0"
   },

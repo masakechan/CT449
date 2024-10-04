@@ -4,20 +4,37 @@ const MongoDB = require("./app/utils/mongodb.util");
 
 async function startServer() {
   try {
-    // Connect to the MongoDB database
+    // Kết nối đến cơ sở dữ liệu MongoDB
     await MongoDB.connect(config.db.uri);
     console.log("Connected to the database!");
 
-    // Start the server
+    // Bắt đầu server
     const PORT = config.app.port;
-    app.listen(PORT, () => {
+    const server = app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}.`);
     });
+
+    // Xử lý tín hiệu tắt server
+    process.on("SIGINT", async () => {
+      await MongoDB.close(); // Đóng kết nối MongoDB
+      server.close(() => {
+        console.log("Server closed.");
+        process.exit(0); // Thoát ứng dụng
+      });
+    });
+
+    process.on("SIGTERM", async () => {
+      await MongoDB.close(); // Đóng kết nối MongoDB
+      server.close(() => {
+        console.log("Server closed.");
+        process.exit(0); // Thoát ứng dụng
+      });
+    });
   } catch (error) {
-    console.log("Cannot connect to the database!", error);
-    process.exit();
+    console.error("Cannot connect to the database!", error.message); // Hiển thị thông báo lỗi
+    process.exit(1); // Thoát ứng dụng với mã lỗi
   }
 }
 
-// Start the server
+// Khởi động server
 startServer();
